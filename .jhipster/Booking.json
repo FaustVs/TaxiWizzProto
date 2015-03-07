@@ -1,0 +1,38 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "user",
+            "relationshipNameCapitalized": "User",
+            "relationshipFieldName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-many",
+            "otherEntityNameCapitalized": "User",
+            "ownerSide": true
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "destination",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Destination",
+            "fieldNameUnderscored": "destination"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "departure",
+            "fieldType": "String",
+            "fieldNameCapitalized": "Departure",
+            "fieldNameUnderscored": "departure"
+        }
+    ],
+    "fieldsContainOwnerManyToMany": false,
+    "fieldsContainOneToMany": false,
+    "fieldsContainLocalDate": false,
+    "fieldsContainCustomTime": false,
+    "fieldsContainBigDecimal": false,
+    "fieldsContainDateTime": false,
+    "fieldsContainDate": false,
+    "changelogDate": "20150303110716"
+}

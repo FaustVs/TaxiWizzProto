@@ -1,0 +1,120 @@
+<div>
+
+    <h2 translate="taxiwizzApp.booking.home.title">Booking</h2>
+
+    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#saveBookingModal" ng-click="clear()">
+        <span class="glyphicon glyphicon-flash"></span> <span translate="taxiwizzApp.booking.home.createLabel">Create a new Booking</span>
+    </button>
+    <div class="modal fade" id="saveBookingModal" tabindex="-1" role="dialog" aria-labelledby="myBookingLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="editForm" role="form" novalidate
+                      class="ng-scope ng-invalid ng-invalid-required ng-dirty ng-valid-minlength"
+                      ng-submit="create()">
+
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" id="myBookingLabel" translate="taxiwizzApp.booking.home.createOrEditLabel">Create or edit a Booking</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="id"
+                                   ng-model="booking.id" readonly>
+                        </div>
+
+                        <div class="form-group">
+                            <label translate="taxiwizzApp.booking.destination">Destination</label>
+                            <input type="text" class="form-control" name="destination"
+                                   ng-model="booking.destination">
+                        </div>
+                        <div class="form-group">
+                            <label translate="taxiwizzApp.booking.departure">Departure</label>
+                            <input type="text" class="form-control" name="departure"
+                                   ng-model="booking.departure">
+                        </div>
+
+                         <div class="form-group">
+                             <label translate="taxiwizzApp.booking.user">user</label>
+                             <select class="form-control" multiple name="user" ng-model="booking.users" ng-options="user as user.login for user in users track by user.id">
+                             </select>
+                         </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="editForm.$invalid" class="btn btn-primary">
+                            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteBookingConfirmation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form name="deleteForm" ng-submit="confirmDelete(booking.id)">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                ng-click="clear()">&times;</button>
+                        <h4 class="modal-title" translate="entity.delete.title">Confirm delete operation</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p translate="taxiwizzApp.booking.delete.question" translate-values="{id: '{{booking.id}}'}">Are you sure you want to delete this Booking?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+                        </button>
+                        <button type="submit" ng-disabled="deleteForm.$invalid" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th translate="taxiwizzApp.booking.destination">Destination</th>
+                    <th translate="taxiwizzApp.booking.departure">Departure</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="booking in bookings">
+                    <td><a ui-sref="bookingDetail({id:booking.id})">{{booking.id}}</a></td>
+                    <td>{{booking.destination}}</td>
+                    <td>{{booking.departure}}</td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="bookingDetail({id:booking.id})"
+                                class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span translate="entity.action.view"> View</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="update(booking.id)"
+                                class="btn btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span translate="entity.action.edit"> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ng-click="delete(booking.id)"
+                                class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span translate="entity.action.delete"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

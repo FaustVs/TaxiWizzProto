@@ -1,0 +1,56 @@
+
+<div>
+    <h2><span translate="taxiwizzApp.booking.detail.title">Booking</span> {{booking.id}} </h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th translate="entity.detail.field">Field</th>
+                    <th translate="entity.detail.value">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span translate="taxiwizzApp.booking.destination">Destination</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{booking.destination}}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span translate="taxiwizzApp.booking.departure">Departure</span>
+                    </td>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{booking.departure}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+		
+		<h4> Passengers </h4>
+
+		<table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Login</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat='user in booking.users'>
+                    <td>
+                        <input type="text" class="input-sm form-control" value="{{user.login}}" readonly>
+                    </td>
+                </tr>
+            </tbody>
+        </table>				
+		
+    </div>
+
+    <button type="submit"
+            ui-sref="booking"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

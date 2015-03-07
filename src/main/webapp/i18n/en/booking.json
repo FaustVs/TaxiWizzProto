@@ -1,0 +1,21 @@
+{
+    "taxiwizzApp": {
+        "booking" : {
+            "home": {
+                "title": "Bookings",
+                "createLabel": "Create a new Booking",
+                "createOrEditLabel": "Create or edit a Booking"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Booking {{ id }}?"
+            },
+            "detail": {
+                "title": "Booking",
+				"name": "Name"
+            },
+            "destination": "Destination",
+            "departure": "Departure",
+            "user": "user"
+        }
+    }
+}

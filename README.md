@@ -1,2 +1,2 @@
-README for Taxiwizz (Prototype version...)
+README for Taxiwizz (Prototype version only)
 ==========================

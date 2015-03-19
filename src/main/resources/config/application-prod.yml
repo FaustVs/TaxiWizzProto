@@ -8,7 +8,7 @@ server:
         dataSourceClassName: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
         url: ${-DJDBC_CONNECTION_STRING}
         databaseName: ${-DRDS_DB_NAME}
-        serverName: ${-DRDS_HOSTNAME}
+        serverName: ebdb
         username: ${-DRDS_USERNAME}
         password: ${-DRDS_PASSWORD}
         cachePrepStmts: true

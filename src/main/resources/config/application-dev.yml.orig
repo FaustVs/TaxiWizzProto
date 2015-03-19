@@ -5,16 +5,16 @@ spring:
     profiles:
         active: dev
     datasource:
-        dataSourceClassName: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
-        url: jdbc:mysql://aa1dkhnabfqra9g.cshfampjbcxr.eu-west-1.rds.amazonaws.com:3306/ebdb
-        databaseName: ebdb
+        dataSourceClassName: org.h2.jdbcx.JdbcDataSource
+        url: jdbc:h2:mem:jhipster;DB_CLOSE_DELAY=-1
+        databaseName: 
         serverName: 
-        username: taxiwizz
-        password: taxiwizz
+        username: 
+        password: 
 
     jpa:
-        database-platform: org.hibernate.dialect.MySQLInnoDBDialect
-        database: MYSQL
+        database-platform: org.hibernate.dialect.H2Dialect
+        database: H2
         openInView: false
         show_sql: true
         generate-ddl: false

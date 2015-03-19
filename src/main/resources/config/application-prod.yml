@@ -10,7 +10,7 @@ spring:
         databaseName: ebdb
         serverName: 
         username: taxiwizz
-        password: ${DRDS_PASSWORD}
+        password: ${RDS_PASSWORD}
         cachePrepStmts: true
         prepStmtCacheSize: 250
         prepStmtCacheSqlLimit: 2048

@@ -8,7 +8,7 @@ server:
         dataSourceClassName: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
         url: jdbc:mysql://aa1dkhnabfqra9g.cshfampjbcxr.eu-west-1.rds.amazonaws.com:3306/ebdb
         databaseName: ebdb
-        serverName:
+        serverName: 
         username: taxiwizz
         password: taxiwizz
         cachePrepStmts: true
